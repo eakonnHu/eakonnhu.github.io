@@ -32,11 +32,11 @@
            $('.ui .item').removeClass('active');
            $(this).addClass('active');
         });
-        $('a').on('click', function() {
-          if(!$(this).attr('href')&&!$(this).children('i').length){
-            $('.ui.basic.modal').modal('show');
-          }
-        });
+        // $('a').on('click', function() {
+        //   if(!$(this).attr('href')&&!$(this).children('i').length){
+        //     $('.ui.basic.modal').modal('show');
+        //   }
+        // });
     });
   </script>
 </head>
@@ -55,8 +55,8 @@
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
   <a class="active item" >Home</a>
-  <a class="item">Blog</a>
-  <a class="item">Love</a>
+  <a class="item" href="http://blog.eamonn.cn">Blog</a>
+  <a class="item" href="http://love.eamonn.cn">Love</a>
   <a class="item">Photos</a>
 </div>
 
