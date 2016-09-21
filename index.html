@@ -1,113 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="App">
 <head>
-  <!-- Standard Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-  <!-- Site Properties -->
-  <title>Eamonn</title>
-  <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
-  <link rel="stylesheet" type="text/css" href="css/app_dev.css">
-  <script src="js/jQuery.1.12.0.min.js"></script>
-  <script src="js/semantic.min.js"></script>
-  <!-- <script src="assets/show-examples.js"></script> -->
-  <script>
-  $(document)
-    .ready(function() {
-      // fix menu when passed
-        $('.masthead').visibility({
-          once: false,
-          onBottomPassed: function() {
-            $('.fixed.menu').transition('fade in');
-          },
-          onBottomPassedReverse: function() {
-            $('.fixed.menu').transition('fade out');
-          }
-        });
-      // create sidebar and attach to menu open
-        $('.ui.sidebar').sidebar('attach events', '.toc.item');
-        $('.ui .item').on('click', function() {
-           $('.ui .item').removeClass('active');
-           $(this).addClass('active');
-        });
-        // $('a').on('click', function() {
-        //   if(!$(this).attr('href')&&!$(this).children('i').length){
-        //     $('.ui.basic.modal').modal('show');
-        //   }
-        // });
-    });
-  </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>K&M</title>
+  <script src="http://cdn.bootcss.com/angular.js/1.4.0/angular.min.js"></script>
+  <!--<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
+  <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="bower_components/slick-carousel/slick/slick.css" rel="stylesheet">
+  <link href="bower_components/slick-carousel/slick/slick-theme.css" rel="stylesheet">
+  <link href="public/css/style.css" rel="stylesheet">
 </head>
 <body>
-
-<!-- Following Menu -->
-<div class="ui large top fixed hidden menu">
-  <div class="ui container">
-    <a class="active item" style="margin-left:auto">Home</a>
-    <a class="item" href="http://blog.eamonn.cn">Blog</a>
-    <a class="item" href="http://love.eamonn.cn">Love</a>
-    <a class="item" style="margin-right:auto">Photos</a>
-  </div>
-</div>
-
-<!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
-  <a class="active item" >Home</a>
-  <a class="item" href="http://blog.eamonn.cn">Blog</a>
-  <a class="item" href="http://love.eamonn.cn">Love</a>
-  <a class="item">Photos</a>
-</div>
-
-
-<!-- Page Contents -->
-<div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment">
-    <div class="ui container">
-      <div class="ui large secondary inverted pointing menu">
-        <a class="toc item">
-          <i class="sidebar icon"></i>
-        </a>
-        <a class="active item" style="margin-left:auto">Home</a>
-        <a class="item" href="http://blog.eamonn.cn">Blog</a>
-        <a class="item" href="http://love.eamonn.cn">Love</a>
-        <a class="item"style="margin-right:auto">Photos</a>
-      </div>
-    </div>
-    <div class="ui logo text container">
-      <h1 class="ui inverted header">
-        Eamonn
-      </h1>
-      <h2>Keep Moving</h2>
-      <div class="ui huge primary button">About Me<i class="right arrow icon"></i></div>
-    </div>
-  </div>
-  <div class="ui vertical stripe segment">
-    <div class="ui middle aligned stackable grid container">
-      <div class="row">
-        <div class="eight wide column">
-          <h3 class="ui header">We are KM</h3>
-          <p>There will be a lot of content which are all about KM.</p>
-          <p>The picture on the right side is our logo(from google).</p>
+  <div id="page" class="page-min-width">
+    <div class="header">
+      <div class="banner-background"></div>
+        <div class="header-nav">
+          <div class="wrapper">
+            <div class="left-part">
+              <a class="header-item" href="http://blog.eamonn.cn" target="_blank"><i class="fa fa-info"></i>Blog</a>
+              <a href="" class="logo"><i class="fa fa-coffee"></i>K&M</a>
+              <a class="header-item" href="http://love.eamonn.cn" target="_blank"><i class="fa fa-heart"></i>Love</a>
+            </div>
+          </div>
         </div>
-        <div class="six wide floated column">
-          <img src="assets/images/km.png" class="ui large bordered rounded image">
+    </div>
+    <div class="photo-wrapper" ng-controller="ImageLayout" >
+      <section>
+        <div ng-repeat="img in imgs" style="width:{{img.width*200/img.height}}px;flex-grow:{{img.width*200/img.height}}">
+          <i style="padding-bottom:{{img.height/img.width*100}}%"></i>
+          <img src="public/img/{{img.url}}" alt="">
         </div>
-      </div>
+      </section>
+    </div>
+    <div class="to-top">
+      <i class="fa fa-angle-up"></i>
     </div>
   </div>
-</div>
-<div class="ui basic modal">
-<i class="close icon"></i>
-<div class="header">
-  Message
-</div>
-<div class="image content">
-  <div class="description">
-    <p>Nothing to show here...</p>
-  </div>
-</div>
-</div>
 </body>
+  <script src="public/js/jquery.min.js"></script>
+  <script src="public/js/tether.min.js"></script>
+  <!--<script src="public/js/bootstrap.min.js"></script>-->
+  <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+    <script>
+      var animationOptions = { opacity: 1, bottom: 20};
+      var tick = false;
+      var tick2 = false;
+      $(window).scroll(function(e){
+          var scrollY = window.pageYOffset;
+          if(scrollY > 415){
+            if(!tick){
+              $('.header-nav').addClass('snav');
+              $('.to-top').animate(animationOptions,100);
+              tick = true;
+              tick2 = false;
+            }
+          }else{
+            if(scrollY <= 480){
+              if(!tick2){
+                $('.header-nav').removeClass('snav');
+                $('.to-top').animate({ opacity: 0, bottom: -30},100);
+                tick2=true;
+                tick=false;
+              }
+            }
+          }
+      })
+      $('.to-top').on('click',function(){
+           $(document.body).animate({'scrollTop':0},500);
+        }
+      )
+    </script>
+    <script>
+     angular.module('App', []).controller('ImageLayout', ImageLayout)
+      function ImageLayout($scope, $http){
+        $http.get('/public/cats.json').success(function(imgs){
+          $scope.imgs = imgs
+        })
+      }
+  </script>
 </html>

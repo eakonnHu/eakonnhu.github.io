@@ -1,0 +1,134 @@
+// @import "bootstrap";
+// @import "font-awesome";
+@import "reset";
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+#page{
+    background: #fff;
+    height:1500px;
+    font-family:Arial,'Times New Roman','Microsoft YaHei',SimHei;   
+}
+ @media(min-width: 1276px) and (max-width: 1500px) {
+
+}
+.wrapper{
+    position: relative;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+.header{
+    position: relative;
+    height: 480px;
+    z-index: 9999;
+    .banner-background{
+        // position: absolute;
+        background-image: url("//hbfile.b0.upaiyun.com/img/home/banner/4776a0defde1c459a2126650f9a382d4f9ec370829ece"); 
+        width: 100%;
+        background-position: center 0px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+    }
+    .header-nav{
+        position: fixed;
+        left:0;
+        top:0;
+        right:0;
+        height: 50px;
+        text-align: center;
+        transition: all 0.5s;
+        a{
+            color:#fff;
+            transition: 1s;
+        }
+        i{
+            margin-right: 5px;
+        }
+    }
+    .snav{
+        background-color: #fff;
+        color:#000;
+        a{
+            color:#000;
+        }
+    }
+    .left-part{
+        padding-top: 10px;
+    }
+    .logo{
+        font-style:italic;
+        font-size: 20px; 
+        letter-spacing: 2px;
+        margin-right: 20px;
+    }
+    .header-item{
+        margin-right: 20px;
+        font-size: 13px; 
+    }
+    .title{
+        color:#fff;
+        font-size: 25px;
+        position: absolute;
+        left:50%;
+        top:50%;
+        margin-left: -73px;
+        margin-top:-15px;
+    }
+    .right-part{
+        font-size: 20px;
+        padding-top: 12px;
+        color:#000;
+    }
+}
+.photo-wrapper{
+    padding: 10px 80px;
+    section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    section::after {
+        content: '';
+        flex-grow: 999999999;
+    }
+    div {
+        margin: 5px;
+        background-color: violet;
+        position: relative;
+    }
+    i{
+        display: block;
+    }
+    img {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        vertical-align: bottom;
+        transition: 0.5s;
+    }
+    img:hover{
+        transform: scale(1.05);
+    }
+}
+.to-top{
+    width: 30px;
+    height: 27px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #999;
+    position: fixed;
+    // position: relative;
+    bottom: -30px;
+    opacity: 0;
+    right: 20px;
+    text-align: center;
+    padding-top: 2px;
+    transition: all 0.5s;
+}
+.to-top:hover{
+    background-color: #666;
+    cursor: pointer;
+}

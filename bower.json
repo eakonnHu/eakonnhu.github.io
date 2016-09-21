@@ -1,0 +1,27 @@
+{
+  "name": "Gulp_Sass",
+  "version": "0.1.0",
+  "authors": [
+    "Eamonn"
+  ],
+  "description": "An Bootstrap4 RTL Awesome Workflow",
+  "main": "index.html",
+  "keywords": [
+    "bootstrap4",
+    "gulp",
+    "Bootstrap4-RTL"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "bootstrap#v4.0.0-alpha.4",
+    "font-awesome": "*",
+    "slick-carousel": "^1.6.0"
+  }
+}
