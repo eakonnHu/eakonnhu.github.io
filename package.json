@@ -32,6 +32,7 @@
     "gulp-postcss": "^6.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.0",
-    "rtlcss": "^2.0.6"
+    "rtlcss": "^2.0.6",
+    "fullpage.js": "^2.8.9"
   }
 }
