@@ -4,27 +4,61 @@
     <meta charset="UTF-8">
     <title>SideNavi</title>
     <link rel="stylesheet" href="./dest/scss/sideNavi.css">
+    <link rel="stylesheet" href="/node_modules/fullpage.js/dist/jquery.fullpage.min.css">
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/gsap/src/minified/TweenMax.min.js"></script>
+    <script src="/node_modules/fullpage.js/dist/jquery.fullpage.min.js"></script>
     <script src="./dest/js/SideNav.js"></script>
 </head>
 <style>
     body{
         background-color: #eee;
     }
+    .m-inner-wrap{
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+    }
 </style>
 <body>
 <section class="km-side-navi" id="exampleSide"></section>
 <section class="km-side-navi" id="exampleSide2"></section>
+<div id="fullpage">
+    <div class="section">
+        <div class="m-inner-wrap">
+            Part1
+        </div>
+    </div>
+    <div class="section">
+        <div class="m-inner-wrap">
+            Part2
+        </div>
+    </div>
+    <div class="section">
+        <div class="m-inner-wrap">
+            Part3
+        </div>
+    </div>
+    <div class="section">
+        <div class="m-inner-wrap">
+            Part4
+        </div>
+    </div>
+</div>
 </body>
-<script>    
+<script>
+$(document).ready(function() {
     var SideNav = new SideNavi({id:'exampleSide2'});
     var options = {
-        menu : ['item1','item2','item3','item4','item5'],
+        menu : ['item1','item2','item3','item4'],
         position : 'left',
         themeColor : '#1ed1dc',
         id : 'exampleSide'
     }
     var SideNav = new SideNavi(options);
+    $('#fullpage').fullpage({
+        sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000']
+    });
+});    
 </script>
 </html>
