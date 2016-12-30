@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抽奖demo</title>
+    <link rel="stylesheet" href="/dest/lottery/css/lottery.css">
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/public/lottery/js/lottery.js"></script>
+</head>
+<body>
+    <table cellspacing="5" id="lottery">
+        <tr>
+            <td class="lottery-item lottery-item-0">0</td>
+            <td class="lottery-item lottery-item-1">1</td>
+            <td class="lottery-item lottery-item-2">2</td>
+        </tr>
+        <tr>
+            <td class="lottery-item lottery-item-7">7</td>
+            <td class="lottery-draw">点击抽奖</td>
+            <td class="lottery-item lottery-item-3">3</td>
+        </tr>
+        <tr>
+            <td class="lottery-item lottery-item-6">6</td>
+            <td class="lottery-item lottery-item-5">5</td>
+            <td class="lottery-item lottery-item-4">4</td>
+        </tr>
+    </table>
+</body>
+<script>
+    var lottery = new Lottery()
+    $('.lottery-draw').on('click',function(){
+        lottery.start()
+    })
+</script>
+</html>
